@@ -4,6 +4,10 @@ public class StringCalculator {
 		if(numbers == "" ) {
 			return 0;
 		}
+		else if(numbers.length() == 1) {
+			int a = Integer.parseInt(numbers);
+			return a;
+		}
 		return -1;
 	}
 }
