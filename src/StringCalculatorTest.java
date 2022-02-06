@@ -15,4 +15,9 @@ public class StringCalculatorTest {
 	public void returnsZeroForEmptyString() {
 		assertEquals(calc.Add(""), 0);
 	}
+	
+	@Test
+	public void returnNumberForSingleNumber() {
+		assertEquals(calc.Add("1"), 1);
+	}
 }
