@@ -26,4 +26,9 @@ public class StringCalculatorTest {
 		assertEquals(calc.Add("19"), 19);
 	}
 	
+	@Test
+	public void returnSumForMultipleNumbers() {
+		assertEquals(calc.Add("2,3"), 5);
+	}
+	
 }
