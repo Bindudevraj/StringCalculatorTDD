@@ -25,4 +25,5 @@ public class StringCalculatorTest {
 	public void returnNumberForMultipleDigitNumber() {
 		assertEquals(calc.Add("19"), 19);
 	}
+	
 }
