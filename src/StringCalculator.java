@@ -8,6 +8,10 @@ public class StringCalculator {
 			int a = Integer.parseInt(numbers);
 			return a;
 		}
+		else if(numbers.length() > 1) {
+			int a = Integer.parseInt(numbers);
+			return a;
+		}
 		return -1;
 	}
 }
