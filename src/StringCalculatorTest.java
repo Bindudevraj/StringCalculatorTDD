@@ -20,4 +20,9 @@ public class StringCalculatorTest {
 	public void returnNumberForSingleNumber() {
 		assertEquals(calc.Add("1"), 1);
 	}
+	
+	@Test
+	public void returnNumberForMultipleDigitNumber() {
+		assertEquals(calc.Add("19"), 19);
+	}
 }
