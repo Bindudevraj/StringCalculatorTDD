@@ -9,7 +9,7 @@ public class StringCalculator {
 			return stringToIntTransform(numbers);
 		}
 		else{
-			  return Integer.parseInt(input[0]) + Integer.parseInt(input[1]);
+			  return SumOfTwoNumbers(input[0], input[1]);
 		}
 	}
 	private boolean isEmpty(String numbers) {
@@ -18,5 +18,8 @@ public class StringCalculator {
     
     private int stringToIntTransform(String numbers) {
 		  return Integer.parseInt(numbers);
+    }
+    private int SumOfTwoNumbers(String numA, String numB) {
+    	return Integer.parseInt(numA) + Integer.parseInt(numB);
     }
 }
