@@ -4,10 +4,7 @@ public class StringCalculator {
 			return 0;
 		}
 		if(numbers.startsWith("//")) {
-			String separator ="\n";
-			int sepPos = numbers.indexOf(separator);
-			numbers = numbers.replaceAll(";", ",");
-			numbers = numbers.substring(sepPos + separator.length());
+			return delimiter(numbers);
 		}
 		else if(numbers.contains("\n")){
 			numbers = numbers.replaceAll("\n", ",");
@@ -38,4 +35,12 @@ public class StringCalculator {
 		}
 		return sum;
     }
+	
+	private int delimiter(String numbers) {
+		String separator ="\n";
+		int indexnum = numbers.indexOf(separator);
+		numbers = numbers.replaceAll(";", ",");
+		numbers = numbers.substring(indexnum + separator.length());
+		return AddSum(numbers);
+	}
 }
