@@ -41,4 +41,8 @@ public class StringCalculatorTest {
 		assertEquals(calc.Add("1\n2,3"), 6);
 	}
 	
+	@Test
+	public void returnsValidSumForDifferentDelimiter() {
+		assertEquals(calc.Add("//;\n1;2"), 3);
+	}
 }
