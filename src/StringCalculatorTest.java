@@ -33,7 +33,12 @@ public class StringCalculatorTest {
 	
 	@Test
 	public void returnsSumForMultipleNumbers() {
-		assertEquals(calc.Add("1,2,3"), 6);
+		assertEquals(calc.Add("1,2,3,8"), 14);
+	}
+	
+	@Test
+	public void returnsValidSumForNewLineDelimiter() {
+		assertEquals(calc.Add("1\n2,3"), 6);
 	}
 	
 }
