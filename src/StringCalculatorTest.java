@@ -31,9 +31,9 @@ public class StringCalculatorTest {
 		assertEquals(calc.Add("1,2"), 3);
 	}
 	
-//	@Test
-//	public void returnSumForMultipleNumbers() {
-//		assertEquals(calc.SumofNumbers("1,2,3,4"), 10);
-//	}
+	@Test
+	public void returnSumForMultipleNumbers() {
+		assertEquals(calc.SumofNumbers("1,2,3,4"), 10);
+	}
 	
 }
