@@ -1,5 +1,7 @@
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+
 import org.junit.Before;
 
 
@@ -45,5 +47,15 @@ public class StringCalculatorTest {
 	public void returnsValidSumForDifferentDelimiter() {
               //		“//[delimiter]\n[numbers…]”
 		assertEquals(calc.Add("//;\n1;2"), 3);
+	}
+	
+	@Test
+	public void returnsExceptionForNegativeNumbers() {
+		try{
+			calc.Add("1,-2,3");
+			fail("Exception expected");
+		 }
+		catch(RuntimeException e) 
+		 {}
 	}
 }
