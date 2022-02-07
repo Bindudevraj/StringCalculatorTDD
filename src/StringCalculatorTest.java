@@ -17,23 +17,23 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void returnNumberForSingleNumber() {
+	public void returnsNumberForSingleNumber() {
 		assertEquals(calc.Add("1"), 1);
 	}
 	
 	@Test
-	public void returnNumberForMultipleDigitNumber() {
+	public void returnsNumberForMultipleDigitNumber() {
 		assertEquals(calc.Add("19"), 19);
 	}
 	
 	@Test
-	public void returnSumForTwoNumbers() {
+	public void returnsSumForTwoNumbers() {
 		assertEquals(calc.Add("1,2"), 3);
 	}
 	
 	@Test
-	public void returnSumForMultipleNumbers() {
-		assertEquals(calc.SumofNumbers("1,2,3,4"), 10);
+	public void returnsSumForMultipleNumbers() {
+		assertEquals(calc.Add("1,2,3"), 6);
 	}
 	
 }

@@ -8,29 +8,21 @@ public class StringCalculator {
 		}
 		else if(numbers.contains(",")){
 			String[] input = numbers.split(",");
-			return Integer.parseInt(input[0]) + Integer.parseInt(input[1]);
+			int size = input.length;
+			int sum=0;
+			for(int i=0; i<size; i++){
+				sum = sum + Integer.parseInt(input[i]);
+			}
+			return sum;
 		}
 		return -1;
 	}
 	
 	private boolean isEmpty(String numbers) {
-		  return numbers.isEmpty();
+		return numbers.isEmpty();
 	}
 	
 	private int stringToIntTransform(String numbers) {
-		  return Integer.parseInt(numbers);
+		return Integer.parseInt(numbers);
     }
 }
-
-
-//	private static int SumofNumbers(String[] input, int size){
-//		for(int i =0 ; i <size; i++) {
-//			int sum = 0;
-//			sum = sum + toInt(input[i]);
-//			}
-//		return sum;
-//	    }
-
-//private int SumOfTwoNumbers(String numA, String numB) {
-//	return Integer.parseInt(numA) + Integer.parseInt(numB);
-//}
