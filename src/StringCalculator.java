@@ -7,13 +7,7 @@ public class StringCalculator {
 			return stringToIntTransform(numbers);
 		}
 		else if(numbers.contains(",")){
-			String[] input = numbers.split(",");
-			int size = input.length;
-			int sum=0;
-			for(int i=0; i<size; i++){
-				sum = sum + Integer.parseInt(input[i]);
-			}
-			return sum;
+			return AddSum(numbers);
 		}
 		return -1;
 	}
@@ -24,5 +18,15 @@ public class StringCalculator {
 	
 	private int stringToIntTransform(String numbers) {
 		return Integer.parseInt(numbers);
+    }
+	
+	private int AddSum(String numbers) {
+		String[] input = numbers.split(",");
+		int size = input.length;
+		int sum=0;
+		for(int i=0; i<size; i++){
+			sum = sum + Integer.parseInt(input[i]);
+		}
+		return sum;
     }
 }
