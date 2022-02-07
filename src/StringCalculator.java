@@ -3,6 +3,9 @@ public class StringCalculator {
 		if(isEmpty(numbers)) {
 			return 0;
 		}
+		if(numbers.contains("\n")){
+			numbers = numbers.replaceAll("\n", ",");
+		}
 		if(!numbers.contains(",")) {
 			return stringToIntTransform(numbers);
 		}
