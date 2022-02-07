@@ -43,6 +43,7 @@ public class StringCalculatorTest {
 	
 	@Test
 	public void returnsValidSumForDifferentDelimiter() {
+              //		“//[delimiter]\n[numbers…]”
 		assertEquals(calc.Add("//;\n1;2"), 3);
 	}
 }

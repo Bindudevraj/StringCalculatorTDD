@@ -3,7 +3,13 @@ public class StringCalculator {
 		if(isEmpty(numbers)) {
 			return 0;
 		}
-		if(numbers.contains("\n")){
+		if(numbers.startsWith("//")) {
+			String separator ="\n";
+			int sepPos = numbers.indexOf(separator);
+			numbers = numbers.replaceAll(";", ",");
+			numbers = numbers.substring(sepPos + separator.length());
+		}
+		else if(numbers.contains("\n")){
 			numbers = numbers.replaceAll("\n", ",");
 		}
 		if(!numbers.contains(",")) {
