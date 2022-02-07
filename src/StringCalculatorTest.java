@@ -21,10 +21,10 @@ public class StringCalculatorTest {
 		assertEquals(calc.Add("1"), 1);
 	}
 	
-//	@Test
-//	public void returnNumberForMultipleDigitNumber() {
-//		assertEquals(calc.Add("19"), 19);
-//	}
+	@Test
+	public void returnNumberForMultipleDigitNumber() {
+		assertEquals(calc.Add("19"), 19);
+	}
 	
 	@Test
 	public void returnSumForTwoNumbers() {
