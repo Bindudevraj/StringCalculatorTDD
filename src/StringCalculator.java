@@ -3,7 +3,7 @@ public class StringCalculator {
 		if(numbers == "" ) {
 			return 0;
 		}
-		if(numbers.contains(",")) {
+		if(!numbers.contains(",")) {
 			int a = Integer.parseInt(numbers);
 			return a;
 		}
