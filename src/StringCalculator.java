@@ -57,7 +57,16 @@ public class StringCalculator {
 
 	public static void throwExceptionIfNegativeExists(String numbers) {
 	     if (numbers != "") {
-	     throw new NegativesNotAllowed("negatives not allowed: "+ numbers);
-	     }
-	 }
-}
+	    		 throw new NegativesNotAllowed("negatives not allowed: "+ numbers);
+	    	 }else {
+	    		 String[] input = numbers.split(",");
+		 		 int size = input.length;
+		 		 for(int i=0; i < size; i++){
+		 				throw new NegativesNotAllowed("Multiple negatives not allowed: "+ input[i]);
+		 		  }
+		 	   }
+	      }
+     }
+
+
+
