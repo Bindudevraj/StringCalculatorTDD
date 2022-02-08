@@ -50,7 +50,7 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void returnsExceptionForSingleNegative() {
+	public void returnsExceptionForSingleNegativeValues() {
         try {
             calc.Add("-17");
         } catch (StringCalculator.NegativesNotAllowed e) {
@@ -59,7 +59,7 @@ public class StringCalculatorTest {
     } 
 	
 	@Test
-	public void returnsExceptionForMultipleNegative() {
+	public void returnsExceptionForMultipleNegativeValues() {
         try {
             calc.Add("-17,-4,-6,2");
         } catch (StringCalculator.NegativesNotAllowed e) {
