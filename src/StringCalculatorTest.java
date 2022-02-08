@@ -57,4 +57,15 @@ public class StringCalculatorTest {
             assertEquals(e.getMessage(), "Negatives Not Allowed: -17");
         }
     } 
+	
+	@Test
+	public void checkMultipleNegative() {
+        try {
+            calc.Add("-17, -4, -6, 2");
+        } catch (StringCalculator.NegativesNotAllowed e) {
+            assertEquals(e.getMessage(), "Multiple negatives not allowed: -17 -4 -6");
+        }
+    } 
+	
+	
 }
