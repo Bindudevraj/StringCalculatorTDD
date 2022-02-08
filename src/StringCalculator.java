@@ -35,8 +35,10 @@ public class StringCalculator {
 		String[] input = numbers.split(",");
 		int size = input.length;
 		int sum=0;
-		for(int i=0; i < size; i++){
-			sum = sum + Integer.parseInt(input[i]);
+		for(String current:input) {
+			if(stringToIntTransform(current) <= 1000) {
+				sum = sum + stringToIntTransform(current);
+			}
 		}
 		return sum;
     }
