@@ -1,4 +1,6 @@
 import org.junit.Test;
+import org.junit.runner.RunWith;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
@@ -66,4 +68,9 @@ public class StringCalculatorTest {
             assertEquals(e.getMessage(), "Multiple negatives not allowed: -17 -4 -6");
         }
     } 
+	
+	@Test 
+	public void returnsLesserValueNumberIfGreaterThan1000(){
+        assertEquals(calc.Add("2,1001"), 2);
+    }
 }
