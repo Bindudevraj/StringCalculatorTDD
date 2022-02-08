@@ -54,7 +54,7 @@ public class StringCalculatorTest {
         try {
             calc.Add("-17");
         } catch (StringCalculator.NegativesNotAllowed e) {
-            assertEquals(e.getMessage(), "Negatives Not Allowed: -17");
+            assertEquals(e.getMessage(), "negatives not allowed: -17");
         }
     } 
 	

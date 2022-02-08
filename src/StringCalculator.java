@@ -57,7 +57,7 @@ public class StringCalculator {
 
 	public static void throwExceptionIfNegativeExists(String numbers) {
 	     if (numbers != "") {
-	     throw new NegativesNotAllowed("Negatives Not Allowed: "+ numbers);
+	     throw new NegativesNotAllowed("negatives not allowed: "+ numbers);
 	     }
 	 }
 }
