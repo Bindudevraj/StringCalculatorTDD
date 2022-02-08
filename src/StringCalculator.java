@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class StringCalculator {
 	public int Add(String numbers) {
 		if(isEmpty(numbers)) {
@@ -15,6 +17,9 @@ public class StringCalculator {
 		else if(numbers.contains(",")){
 			return AddSum(numbers);
 		}
+		else if(numbers.contains("-")) {
+			throwExceptionIfNegativeExists(numbers);
+		}
 		return -1;
 	}
 	
@@ -30,7 +35,7 @@ public class StringCalculator {
 		String[] input = numbers.split(",");
 		int size = input.length;
 		int sum=0;
-		for(int i=0; i<size; i++){
+		for(int i=0; i < size; i++){
 			sum = sum + Integer.parseInt(input[i]);
 		}
 		return sum;
@@ -43,4 +48,16 @@ public class StringCalculator {
 		numbers = numbers.substring(indexnum + separator.length());
 		return AddSum(numbers);
 	}
+	
+	public static class NegativesNotAllowed extends RuntimeException {
+		public NegativesNotAllowed(String numbers) {
+	    super(numbers);
+	    }
+	}
+
+	public static void throwExceptionIfNegativeExists(String numbers) {
+	     if (numbers != "") {
+	     throw new NegativesNotAllowed("Negatives Not Allowed: "+ numbers);
+	     }
+	 }
 }

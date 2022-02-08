@@ -50,12 +50,11 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void returnsExceptionForNegativeNumbers() {
-		try{
-			calc.Add("1,-2,3");
-			fail("Exception expected");
-		 }
-		catch(RuntimeException e) 
-		 {}
-	}
+	public void checkNegative() {
+        try {
+            calc.Add("-17");
+        } catch (StringCalculator.NegativesNotAllowed e) {
+            assertEquals(e.getMessage(), "Negatives Not Allowed: -17");
+        }
+    } 
 }
