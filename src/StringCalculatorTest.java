@@ -50,7 +50,7 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void checkNegative() {
+	public void returnsExceptionForSingleNegative() {
         try {
             calc.Add("-17");
         } catch (StringCalculator.NegativesNotAllowed e) {
@@ -59,13 +59,11 @@ public class StringCalculatorTest {
     } 
 	
 	@Test
-	public void checkMultipleNegative() {
+	public void returnsExceptionForSingleNegative() {
         try {
             calc.Add("-17,-4,-6,2");
         } catch (StringCalculator.NegativesNotAllowed e) {
             assertEquals(e.getMessage(), "Multiple negatives not allowed: -17 -4 -6");
         }
     } 
-	
-	
 }
