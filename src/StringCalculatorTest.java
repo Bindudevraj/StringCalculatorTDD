@@ -73,4 +73,12 @@ public class StringCalculatorTest {
 	public void returnsLesserValueNumberIfGreaterThan1000(){
         assertEquals(calc.Add("2,1001"), 2);
     }
+	
+	@Test
+	public void returnsValidSumForAnyLengthOfDelimiter() {
+              //		“//[delimiter]\n”
+		assertEquals(calc.Add("//[***]\\n1***2***3"), 6);
+	}
 }
+
+
