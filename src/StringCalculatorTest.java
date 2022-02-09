@@ -79,6 +79,12 @@ public class StringCalculatorTest {
               //		“//[delimiter]\n”
 		assertEquals(calc.Add("//[***]\n1***2***3"), 6);
 	}
+	
+	@Test
+	public void returnsValidSumForMultipleDelimiter() {
+              //		“//[delim1][delim2]\n”
+		assertEquals(calc.Add("//[*][%]\\n1*2%3	"), 6);
+	}
 }
 
 
