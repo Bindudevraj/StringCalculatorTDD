@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringCalculator {
 	public int Add(String numbers) {
@@ -6,7 +8,10 @@ public class StringCalculator {
 			return 0;
 		}
 		if(numbers.startsWith("//")) {
-			return delimiter(numbers);
+			if(numbers.contains("[")) {
+				return multipleDelimiter(numbers);
+			}
+		    return singleDelimiter(numbers);
 		}
 		else if(numbers.contains("\n")){
 			numbers = numbers.replaceAll("\n", ",");
@@ -15,7 +20,7 @@ public class StringCalculator {
 			return stringToIntTransform(numbers);
 		}
 		else if(numbers.contains(",")){
-			return AddSum(numbers);
+			return addSum(numbers);
 		}
 		else if(numbers.contains("-")) {
 			throwExceptionIfNegativeExists(numbers);
@@ -27,11 +32,11 @@ public class StringCalculator {
 		return numbers.isEmpty();
 	}
 	
-	private int stringToIntTransform(String numbers) {
+	private static int stringToIntTransform(String numbers) {
 		return Integer.parseInt(numbers);
     }
 	
-	private int AddSum(String numbers) {
+	private static int addSum(String numbers) {
 		String[] input = numbers.split(",");
 		int size = input.length;
 		int sum=0;
@@ -43,12 +48,12 @@ public class StringCalculator {
 		return sum;
     }
 	
-	private int delimiter(String numbers) {
+	public int singleDelimiter(String numbers) {
 		String separator ="\n";
 		int indexnum = numbers.indexOf(separator);
 		numbers = numbers.replaceAll(";", ",");
 		numbers = numbers.substring(indexnum + separator.length());
-		return AddSum(numbers);
+		return addSum(numbers);
 	}
 	
 	public static class NegativesNotAllowed extends RuntimeException {
@@ -67,8 +72,18 @@ public class StringCalculator {
 		 				throw new NegativesNotAllowed("Multiple negatives not allowed: "+ input[i]);
 		 		  }
 		 	   }
-	      }
-     }
+	}
+	
+	public static int multipleDelimiter(String numbers) {
+		numbers = numbers.substring(numbers.indexOf("[") + 1);
+		String delimiter = numbers.substring(0, numbers.indexOf("]"));
+		String separator ="\n";
+		int indexnum = numbers.indexOf(separator);
+		numbers = numbers.substring(indexnum + separator.length());
+		numbers = numbers.replaceAll("[!@#$%&*()_+=|<>?{}\\\\[\\\\]~-]+", ",").replaceAll("\\s+", ",");
+		return addSum(numbers);
+	}
+}
 
 
 
