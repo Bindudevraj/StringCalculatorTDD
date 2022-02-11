@@ -9,6 +9,11 @@ public class StringCalculator {
 		}
 		if(numbers.startsWith("//")) {
 			if(numbers.contains("[")) {
+				return nDelimiter(numbers);
+			}
+			else if(numbers.matches("[.*]") && 
+					numbers.matches("[.*]")) 
+			{
 				return multipleDelimiter(numbers);
 			}
 		    return singleDelimiter(numbers);
@@ -74,13 +79,18 @@ public class StringCalculator {
 		 	   }
 	}
 	
-	public static int multipleDelimiter(String numbers) {
+	public static int nDelimiter(String numbers) {
 		numbers = numbers.substring(numbers.indexOf("[") + 1);
 		String delimiter = numbers.substring(0, numbers.indexOf("]"));
 		String separator ="\n";
 		int indexnum = numbers.indexOf(separator);
 		numbers = numbers.substring(indexnum + separator.length());
 		numbers = numbers.replaceAll("[!@#$%&*()_+=|<>?{}\\\\[\\\\]~-]+", ",").replaceAll("\\s+", ",");
+		return addSum(numbers);
+	}
+	
+	public static int multipleDelimiter(String numbers) {
+		numbers = numbers.replaceAll("[!@#$%&*()_+=|<>?{}\\\\[\\\\]~-]+", ",");
 		return addSum(numbers);
 	}
 }
