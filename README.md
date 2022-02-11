@@ -1,9 +1,6 @@
 # StringCalculatorTDD
 
-TDD implementation of a simple calculator which accepts string input written in Java
-
-
-This is a project on Test Driven Development Kata. Where Kata means Karate, will help understand TDD. The students practising Kata(Karate) repeat several forms over, over and over again, adjusting and improving as they practise day by day. Which is related to TDD where this development cycle involves the test first where the test cases fail and improvising or refactoring that code will fetch the pass case with minimum code.
+TDD implementation of a simple calculator which accepts string input written in Java. This is a project on Test Driven Development Kata. Where Kata means Karate, will help understand TDD. The students practising Kata(Karate) repeat several forms over, over and over again, adjusting and improving as they practise day by day. Which is related to TDD where this development cycle involves the test first where the test cases fail and improvising or refactoring that code will fetch the pass case with minimum code.
 
 Code Katas are small and simple coding that can be repeated over time to drive improvements in technique and design. Kata is mantra to understand TDD.
 
