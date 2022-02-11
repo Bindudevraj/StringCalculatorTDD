@@ -88,6 +88,13 @@ public class StringCalculator {
 		numbers = numbers.replaceAll("[!@#$%&*()_+=|<>?{}\\\\[\\\\]~-]+", ",").replaceAll("\\s+", ",");
 		return addSum(numbers);
 	}
+	
+	public static int multipleDelimiter(String numbers) {
+//		numbers = numbers.replaceAll("[!@#$%&*()_+=|<>?{}\\\\[\\\\]~-]+", ",");
+//		return addSum(numbers);
+		return nDelimiter(numbers);
+
+	}
 }
 
 
